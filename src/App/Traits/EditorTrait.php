@@ -21,6 +21,8 @@ trait EditorTrait{
 	        'css' => $request->get('laravel-grapesjs-css'),
 	        'html' => $request->get('laravel-grapesjs-html'),
 	    ];
+		
+        $model->gjs_data['html'] = str_replace(['<body>', '</body>'], '', $model->gjs_data['html']);
 
 	    $model->save();
 
